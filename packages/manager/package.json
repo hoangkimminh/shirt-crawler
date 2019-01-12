@@ -1,0 +1,7 @@
+{
+  "name": "@shirt-crawler/manager",
+  "version": "0.0.1",
+  "dependencies": {
+    "@albert-team/spiderman": "^0.1.0"
+  }
+}
