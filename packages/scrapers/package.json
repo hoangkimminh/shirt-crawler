@@ -1,7 +1,8 @@
 {
   "name": "@shirt-crawler/scrapers",
+  "description": "shirt-crawler scrapers",
+  "license": "MIT",
   "version": "0.0.1",
-  "dependencies": {
-    "@albert-team/spiderman": "^0.1.0"
-  }
+  "main": "src/index.js",
+  "dependencies": {}
 }

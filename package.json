@@ -1,5 +1,5 @@
 {
-  "name": "shirt-crawler",
+  "private": true,
   "version": "0.0.1",
   "description": "Shirt crawler",
   "repository": "git@github.com:albert-team/shirt-crawler.git",
@@ -9,7 +9,6 @@
     "node": ">=8.0.0",
     "yarn": ">=1.0.0"
   },
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
