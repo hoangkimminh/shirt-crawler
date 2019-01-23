@@ -1,5 +1,4 @@
 const cheerio = require('cheerio')
-
 const {
   Scraper,
   entities: { ProxyEntity }
@@ -23,7 +22,7 @@ module.exports = class CatalogScraper extends Scraper {
     // get div elements
     $('.s-result-item.s-result-card-for-container.a-declarative.celwidget').map(
       (i, element) => {
-        //get ASIN
+        // get ASIN
         const ASIN = $(element).attr('data-asin')
 
         productsInfo.push({ id: ASIN })
