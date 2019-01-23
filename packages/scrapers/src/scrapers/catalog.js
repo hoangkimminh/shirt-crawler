@@ -29,7 +29,7 @@ module.exports = class CatalogScraper extends Scraper {
         productsInfo.push({ id: ASIN })
       }
     )
-    const nextUrls = 'https://www.amazon.com' + $('#pagnNextLink').attr('href')
-    return { data: { products: productsInfo }, nextUrls: [nextUrls] }
+    const nextUrl = 'https://www.amazon.com' + $('#pagnNextLink').attr('href')
+    return { data: { products: productsInfo }, nextUrl: [nextUrl] }
   }
 }
