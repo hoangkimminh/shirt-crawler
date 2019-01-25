@@ -4,5 +4,17 @@
   "license": "MIT",
   "version": "0.0.1",
   "main": "src/index.js",
-  "dependencies": {}
+  "scripts": {
+    "dev": "micro-dev",
+    "start": "micro"
+  },
+  "dependencies": {
+    "@albert-team/spiderman": "^0.3.0",
+    "finalhandler": "^1.1.1",
+    "micro": "^9.3.3",
+    "router": "^1.3.3"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
 }
