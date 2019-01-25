@@ -5,8 +5,8 @@
   "version": "0.0.1",
   "main": "src/index.js",
   "scripts": {
-    "dev": "micro-dev src/api/index.js",
-    "start": "micro src/api/index.js"
+    "dev": "micro-dev",
+    "start": "micro"
   },
   "dependencies": {
     "@albert-team/spiderman": "^0.3.0",
