@@ -8,10 +8,15 @@ router.all('/', (req, res) =>
   send(res, 200, { message: 'Hello world', iam: '/api' })
 )
 router.post('/catalog', async (req, res) => {
-  const { url } = await json(req)
-  const scraper = new CatalogScraper()
-  const result = await scraper.run(url)
-  send(res, 200, result)
+  try {
+    const { url } = await json(req)
+    const scraper = new CatalogScraper()
+    const result = await scraper.run(url)
+    send(res, 200, result)
+  } catch (err) {
+    console.error(err)
+    send(res, 500)
+  }
 })
 
 module.exports = router
