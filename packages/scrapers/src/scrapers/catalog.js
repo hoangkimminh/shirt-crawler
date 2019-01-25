@@ -1,3 +1,4 @@
+const cheerio = require('cheerio')
 const {
   Scraper,
   entities: { ProxyEntity }
@@ -16,6 +17,18 @@ module.exports = class CatalogScraper extends Scraper {
   }
 
   async parse(html) {
-    return { data: { html }, nextUrls: [] }
+    const $ = cheerio.load(html)
+    let productsInfo = []
+    // get div elements
+    $('.s-result-item.s-result-card-for-container.a-declarative.celwidget').map(
+      (i, element) => {
+        // get ASIN
+        const ASIN = $(element).attr('data-asin')
+
+        productsInfo.push({ id: ASIN })
+      }
+    )
+    const nextUrl = 'https://www.amazon.com' + $('#pagnNextLink').attr('href')
+    return { data: { products: productsInfo }, nextUrl: [nextUrl] }
   }
 }
