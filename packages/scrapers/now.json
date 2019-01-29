@@ -2,6 +2,9 @@
   "version": 2,
   "name": "@shirt-crawler/scrapers",
   "alias": "shirt-crawler-scrapers",
-  "builds": [{ "src": "src/index.js", "use": "@now/node" }],
-  "routes": [{ "src": "^/(.*)", "dest": "/src" }]
+  "builds": [
+    { "src": "src/index.js", "use": "@now/node" },
+    { "src": "src/api/**/*.js", "use": "@now/node" }
+  ],
+  "routes": [{ "src": "^/(.*)", "dest": "/src/$1" }]
 }

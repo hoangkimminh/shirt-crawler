@@ -10,10 +10,8 @@
   },
   "dependencies": {
     "@albert-team/spiderman": "^0.3.0",
-    "finalhandler": "^1.1.1",
     "firebase-admin": "^6.5.1",
-    "micro": "^9.3.3",
-    "router": "^1.3.3"
+    "micro": "^9.3.3"
   },
   "devDependencies": {
     "micro-dev": "^3.0.0"

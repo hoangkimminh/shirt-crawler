@@ -10,7 +10,7 @@ module.exports = class ShirtDataProcessor extends DataProcessor {
   async process(data) {
     const { products } = data
     await Promise.all(
-      products.map(async (product) => Shirt.add({ asin: product.id }))
+      products.map(async (product) => Shirt.add({ asin: product.asin }))
     )
     return { success: true }
   }
