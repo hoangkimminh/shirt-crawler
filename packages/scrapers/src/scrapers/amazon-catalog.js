@@ -1,13 +1,13 @@
-const cheerio = require('cheerio')
 const {
   Scraper,
   entities: { ProxyEntity }
 } = require('@albert-team/spiderman')
+const cheerio = require('cheerio')
 
 const userAgents = require('../../user-agents.private.json')
 const { username, password, proxies } = require('../../proxies.private.json')
 
-module.exports = class CatalogScraper extends Scraper {
+module.exports = class AmazonCatalogScraper extends Scraper {
   constructor() {
     const proxyEntities = proxies.map((proxy) => {
       const { host, port } = proxy
@@ -18,14 +18,14 @@ module.exports = class CatalogScraper extends Scraper {
 
   async parse(html) {
     const $ = cheerio.load(html)
-    let productsInfo = []
+    const productsInfo = []
     // get div elements
     $('.s-result-item.s-result-card-for-container.a-declarative.celwidget').map(
       (i, element) => {
         // get ASIN
-        const ASIN = $(element).attr('data-asin')
+        const asin = $(element).attr('data-asin')
 
-        productsInfo.push({ id: ASIN })
+        productsInfo.push({ asin })
       }
     )
     const nextUrl = 'https://www.amazon.com' + $('#pagnNextLink').attr('href')

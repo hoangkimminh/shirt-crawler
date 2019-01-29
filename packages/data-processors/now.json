@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "@shirt-crawler/scrapers",
-  "alias": "shirt-crawler-scrapers",
+  "name": "@shirt-crawler/data-processors",
+  "alias": "shirt-crawler-data-processors",
   "builds": [
     { "src": "src/index.js", "use": "@now/node" },
     { "src": "src/api/**/*.js", "use": "@now/node" }
