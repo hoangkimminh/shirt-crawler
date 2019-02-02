@@ -29,6 +29,6 @@ module.exports = class AmazonCatalogScraper extends Scraper {
       }
     )
     const nextUrl = 'https://www.amazon.com' + $('#pagnNextLink').attr('href')
-    return { data: { products: productsInfo }, nextUrl: [nextUrl] }
+    return { data: { products: productsInfo }, nextUrls: [nextUrl] }
   }
 }
