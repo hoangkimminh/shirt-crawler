@@ -9,7 +9,7 @@
     "start": "micro"
   },
   "dependencies": {
-    "@albert-team/spiderman": "^0.3.0",
+    "@albert-team/spiderman": "^0.3.1",
     "firebase-admin": "^6.5.1",
     "micro": "^9.3.3"
   },
