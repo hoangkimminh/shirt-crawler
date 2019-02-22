@@ -18,37 +18,37 @@ module.exports = class TeeseoScraper extends GenericScraper {
       const relativePath = $(e).attr('href')
       nextUrls.push(`https://www.teeseo.top${relativePath}`)
     })
+
     const productTypes = []
     $('#product_types')
       .find('option')
-      .each((i, e) => {
-        productTypes.push($(e).attr('value'))
-      })
-
+      .each((i, e) =>
+        productTypes.push(
+          $(e)
+            .attr('value')
+            .toLowerCase()
+        )
+      )
     const colors = []
     $('#product_colors')
       .find('option')
-      .each((i, e) => {
-        colors.push($(e).attr('value'))
-      })
-
+      .each((i, e) => colors.push($(e).attr('value')))
     const imageLinks = []
     $('#product_designs > div')
       .find('img')
-      .each((i, e) => {
-        imageLinks.push($(e).attr('data-src'))
-      })
-
+      .each((i, e) => imageLinks.push($(e).attr('data-src')))
     const variants = []
-    for (let i = 0; i < productTypes.length; i++) {
-      for (let j = 0; j < colors.length; j++) {
+    for (let i = 0; i < productTypes.length; i++)
+      for (let j = 0; j < colors.length; j++)
         variants.push({
           type: productTypes[i],
           color: colors[j],
           image: imageLinks[j]
         })
-      }
+
+    return {
+      data: { id, title, description: title, price, variants },
+      nextUrls
     }
-    return { data: { id, title, description: title, price, variants }, nextUrls }
   }
 }
